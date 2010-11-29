@@ -1,0 +1,49 @@
+# Capistrano database.yml task
+
+Provides a couple of tasks for creating the database.yml
+configuration file dynamically when deploy:setup is run.
+
+## Source
+
+This is the database.yml task as introduced by Simone Carletti, packaged as a gem:
+
+http://www.simonecarletti.com/blog/2009/06/capistrano-and-database-yml/
+
+http://gist.github.com/2769
+
+## Usage
+
+The following assumes you use bundler. If you are working on a Rails 3 project, this should be the case.
+
+To use this gem, first add the following to your Gemfile:
+
+    gem "capistrano_database_yml"
+
+Then install the gem by executing:
+
+    $ bundle install
+
+Afterwards, add the following to your config/deploy.rb:
+
+    require "database_yml/capistrano"
+
+The original config/database.yml should be excluded from version control. You can easily accomplish this by renaming the file (for example to database.example.yml) and configuring your SCM in order to ignore the database.yml file.
+
+The following example demonstrate how to rename the file and ignore the original one with Subversion.
+
+    $ svn mv config/database.yml config/database.example.yml
+    $ svn propset svn:ignore 'database.yml' config
+
+If your repository is powered by Git, type the following commands.
+
+    $ git mv config/database.yml config/database.example.yml
+    $ echo 'config/database.yml' >> .gitignore
+
+## License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
