@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.mdown",
     "Rakefile",
     "VERSION",
+    "capistrano_database_yml.gemspec",
     "lib/database_yml/capistrano.rb"
   ]
   s.homepage = %q{http://github.com/amfranz/capistrano_database_yml}
