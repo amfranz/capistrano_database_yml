@@ -12,5 +12,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.0.0)
   jeweler (~> 1.5.1)
