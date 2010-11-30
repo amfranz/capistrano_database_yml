@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Provides a couple of tasks for creating the database.yml configuration file dynamically when deploy:setup is run.}
   gem.email = "amfranz@gmail.com"
   gem.authors = ["Michael Franz Aigner", "Simone Carletti"]
-  gem.add_runtime_dependency 'capistrano', '> 2.0'
+  gem.add_runtime_dependency 'capistrano', '~> 2.0'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
