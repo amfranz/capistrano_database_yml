@@ -6,4 +6,5 @@ task :create_database_yml => "config/database.yml.example" do |task|
   cp task.prerequisites.first, 'config/database.yml' unless File.exists? 'config/database.yml'
 end
 
-task :environment => :create_database_yml
+task 'environment'    => :create_database_yml
+task 'db:load_config' => :create_database_yml
