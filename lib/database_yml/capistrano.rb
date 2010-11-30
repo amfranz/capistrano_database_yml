@@ -61,7 +61,8 @@ EOF
 
       run "mkdir -p #{shared_path}/db"
       run "mkdir -p #{shared_path}/config"
-      put config.result(binding), "#{shared_path}/config/database.yml"
+      put config.result(binding), "#{shared_path}/config/database.yml.example"
+      run "test -e #{shared_path}/config/database.yml || cp -f #{shared_path}/config/database.yml.example #{shared_path}/config/database.yml"
     end
 
     desc <<-DESC
