@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{capistrano_database_yml}
-  s.version = "1.0.0"
+  s.version = "1.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Franz Aigner", "Simone Carletti"]
@@ -25,7 +25,10 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "capistrano_database_yml.gemspec",
-    "lib/database_yml/capistrano.rb"
+    "lib/capistrano_database_yml.rb",
+    "lib/database_yml/capistrano.rb",
+    "lib/database_yml/railtie.rb",
+    "lib/database_yml/tasks.rake"
   ]
   s.homepage = %q{http://github.com/amfranz/capistrano_database_yml}
   s.licenses = ["MIT"]
