@@ -31,12 +31,12 @@ The original config/database.yml should be excluded from version control. You ca
 
 The following example demonstrate how to rename the file and ignore the original one with Subversion.
 
-    $ svn mv config/database.yml config/database.example.yml
+    $ svn mv config/database.yml config/database.yml.example
     $ svn propset svn:ignore 'database.yml' config
 
 If your repository is powered by Git, type the following commands.
 
-    $ git mv config/database.yml config/database.example.yml
+    $ git mv config/database.yml config/database.yml.example
     $ echo 'config/database.yml' >> .gitignore
 
 ## License
