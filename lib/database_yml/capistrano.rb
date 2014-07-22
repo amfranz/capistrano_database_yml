@@ -66,6 +66,7 @@ EOF
       run <<-CMD
         test -e #{shared_path}/config/database.yml || {
           cp -f #{shared_path}/config/database.yml.example #{shared_path}/config/database.yml &&
+          rm #{shared_path}/config/database.yml.example &&
           chmod 600 #{shared_path}/config/database.yml; }
       CMD
     end
